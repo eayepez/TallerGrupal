@@ -6,6 +6,7 @@
 package videoplus;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -28,6 +29,20 @@ public class Cliente {
             return true;
         }
         return false;
+    }
+    public void Reproducir(){
+        String continuar="no";
+        int vistas=10000;
+        do{           
+            listaReproduccion.get(0).mostrarInformacion();
+            listaReproduccion.get(0).setNumeroReproducciones(vistas);
+            vistas++;
+            listaReproduccion.remove(0);
+            Scanner sc =new Scanner(System.in);
+            System.out.print("Desea continuar si/no:");
+            String cont=sc.nextLine();
+            continuar=cont;
+        }while(continuar.equals("si"));
     }
     
     
